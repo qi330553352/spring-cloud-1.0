@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>example-product-plugins</name>
+	<modelVersion>4.0.0</modelVersion>
+	<description>产品基础服务</description>
+	<artifactId>example-product-plugins</artifactId>
+
+	<parent>
+		<groupId>com.example.qixin</groupId>
+		<artifactId>spring-cloud-1.0</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<modules>
+		<module>example-product-api</module>
+		<module>example-product-server</module>
+	</modules>
+</project>

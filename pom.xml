@@ -15,6 +15,14 @@
 		<version>1.5.9.RELEASE</version>
 	</parent>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.20</version>
+		</dependency>
+	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -27,4 +35,7 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<modules>
+		<module>sleuth</module>
+	</modules>
 </project>
