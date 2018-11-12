@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>example-1-consumer</artifactId>
+	<artifactId>example-1-product</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
-	<name>example-1-consumer</name>
-	<description>sleuth简单入门例子</description>
+	<packaging>pom</packaging>
+	<name>example-1-product</name>
+	<description>与ELK集成</description>
 
 	<parent>
 		<groupId>com.example.qixin</groupId>
@@ -21,26 +21,15 @@
 	</properties>
 
 	<dependencies>
-
 		<dependency>
-			<groupId>com.example.qixin</groupId>
-			<artifactId>product-1-api</artifactId>
-			<version>1.0</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-feign</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -52,4 +41,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>

@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  * 作           者: qixin
  * 版  权   所  有: 版权所有(C)2016-2026
  */
-@FeignClient(name="product-1-server")
+@FeignClient(name="elk-product-server")
 public interface ProductService extends ProductApi{
 
 }
