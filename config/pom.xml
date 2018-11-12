@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>config</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>config</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.example.qixin</groupId>
+		<artifactId>spring-cloud-1.0</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<modules>
+		<module>example-client</module>
+		<module>example-client-bus</module>
+		<module>example-client-bus2</module>
+		<module>example-client-refresh</module>
+		<module>example-encrypt-rsa-product-core</module>
+		<module>example-encrypt-security-product-core</module>
+		<module>example-encrypt-symmetric-product-core</module>
+		<module>example-server</module>
+		<module>example-server-bus</module>
+		<module>example-server-encrypt-rsa</module>
+		<module>example-server-encrypt-security</module>
+		<module>example-server-encrypt-symmetric</module>
+	</modules>
+
+
+</project>
