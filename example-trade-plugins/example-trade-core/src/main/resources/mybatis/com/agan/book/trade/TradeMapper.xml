@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.agan.book.trade.persistence.TradeMapper" >
+  <resultMap id="BaseResultMap" type="com.agan.book.trade.domain.Trade" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="INTEGER" />
+    <result column="pay_status" property="payStatus" jdbcType="TINYINT" />
+    <result column="pay_type" property="payType" jdbcType="TINYINT" />
+    <result column="gateway_pay_num" property="gatewayPayNum" jdbcType="VARCHAR" />
+    <result column="gateway_pay_time" property="gatewayPayTime" jdbcType="TIMESTAMP" />
+    <result column="gateway_pay_price" property="gatewayPayPrice" jdbcType="INTEGER" />
+    <result column="deleted" property="deleted" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_id, user_id, price, pay_status, pay_type, gateway_pay_num, gateway_pay_time, 
+    gateway_pay_price, deleted, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from trade
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from trade
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.agan.book.trade.domain.Trade" useGeneratedKeys="true" keyProperty="id">
+    insert into trade (id, order_id, user_id, 
+      price, pay_status, pay_type, 
+      gateway_pay_num, gateway_pay_time, gateway_pay_price, 
+      deleted, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{price,jdbcType=INTEGER}, #{payStatus,jdbcType=TINYINT}, #{payType,jdbcType=TINYINT}, 
+      #{gatewayPayNum,jdbcType=VARCHAR}, #{gatewayPayTime,jdbcType=TIMESTAMP}, #{gatewayPayPrice,jdbcType=INTEGER}, 
+      #{deleted,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.agan.book.trade.domain.Trade" >
+    insert into trade
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="payStatus != null" >
+        pay_status,
+      </if>
+      <if test="payType != null" >
+        pay_type,
+      </if>
+      <if test="gatewayPayNum != null" >
+        gateway_pay_num,
+      </if>
+      <if test="gatewayPayTime != null" >
+        gateway_pay_time,
+      </if>
+      <if test="gatewayPayPrice != null" >
+        gateway_pay_price,
+      </if>
+      <if test="deleted != null" >
+        deleted,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="payStatus != null" >
+        #{payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="payType != null" >
+        #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="gatewayPayNum != null" >
+        #{gatewayPayNum,jdbcType=VARCHAR},
+      </if>
+      <if test="gatewayPayTime != null" >
+        #{gatewayPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gatewayPayPrice != null" >
+        #{gatewayPayPrice,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        #{deleted,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.agan.book.trade.domain.Trade" >
+    update trade
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="payStatus != null" >
+        pay_status = #{payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="payType != null" >
+        pay_type = #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="gatewayPayNum != null" >
+        gateway_pay_num = #{gatewayPayNum,jdbcType=VARCHAR},
+      </if>
+      <if test="gatewayPayTime != null" >
+        gateway_pay_time = #{gatewayPayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gatewayPayPrice != null" >
+        gateway_pay_price = #{gatewayPayPrice,jdbcType=INTEGER},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.agan.book.trade.domain.Trade" >
+    update trade
+    set order_id = #{orderId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER},
+      pay_status = #{payStatus,jdbcType=TINYINT},
+      pay_type = #{payType,jdbcType=TINYINT},
+      gateway_pay_num = #{gatewayPayNum,jdbcType=VARCHAR},
+      gateway_pay_time = #{gatewayPayTime,jdbcType=TIMESTAMP},
+      gateway_pay_price = #{gatewayPayPrice,jdbcType=INTEGER},
+      deleted = #{deleted,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
